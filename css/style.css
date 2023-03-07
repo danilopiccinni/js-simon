@@ -4,22 +4,83 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(../img/milad-fakurian-58Z17lnVS4U-unsplash.jpg);
+    background-size: 100%;
+    background-position-y: 40%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+
 h1 {
+    font-size: 50px;
+}
+
+section div label {
+    color: #120070;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cont-titoli {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 25px;
+
+}
+
+#num1,
+#num2,
+#num3,
+#num4,
+#num5 {
+    height: 50px;
+    width: 100px;
     text-align: center;
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: white
+    ;
+    background-color: #b2b5fe37;
+}
+
+.input-numero::-webkit-outer-spin-button,
+.input-numero::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+
+
+#avvia,
+#controlla {
+    height: 50px;
+    width: 100px;
+    /* padding: 1em 1.5em; */
+    border-radius: 12px;
+
+    color: silver;
+    background-color: #4834f3;
+    border-style: outset;
+    box-shadow: 3px 2px #120070;
+
 }
 
 .cont-bottone-avvia {
     display: flex;
     justify-content: center;
 
-    padding-top: 80px;
+    padding-top: 35px;
 }
 
 .sezione-1 {
     display: flex;
     justify-content: center;
 
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .cont-interno-sezione {
@@ -31,28 +92,48 @@ h1 {
     text-align: center;
 }
 
-
-
 .sezione-2 {
+    position: relative;
+
     display: flex;
     justify-content: center;
-    gap: 300px;
+    align-items: center;
+    gap: 600px;
 
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .sezione-3 {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 250px;
 
-    padding-top: 100px;
+    padding-top: 200px;
 }
 
 .cont-bottone-controlla {
     display: flex;
     justify-content: center;
 
-    padding-top: 100px;
+    padding-top: 35px;
+    margin-bottom: 50px;
 }
 
+.output-numero {
+    
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    padding-top: 1em;
+
+    height: 10px;
+}
+
+#output {
+    position: absolute;
+    left: calc(50% - 0.25em);
+    text-align: center;
+    font-size: 120px;
+    color: rgba(255, 0, 0, 0.677);
+}

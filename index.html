@@ -9,7 +9,10 @@
 </head>
 <body>
 
-    <h1>Testa la tua memoria</h1>
+    <div class="cont-titoli">
+        <h1>Testa la tua memoria</h1>
+        <h4>Vediamo quanti numeri riesci a ricordare</h4>
+    </div>
 
     <div class="cont-bottone-avvia">
         <button id="avvia">Avvia</button>
@@ -18,28 +21,55 @@
 
     <section class="sezione-1">
         <div class="cont-interno-sezione">
-            <label for="">Numero 1</label>
-            <input id="num1" type="number">
+            <label for="">N. 1</label>
+            <input id="num1" class="input-numero" type="number">
+            <div id="output-numero-1" class="output-numero">
+                <!-- output -->
+            </div>
         </div>
     </section>
+
     <section class="sezione-2">
+
         <div class="cont-interno-sezione">
-            <label for="">Numero 2</label>
-            <input id="num2" type="number">
+            <label for="">N. 5</label>
+            <input id="num5" class="input-numero" type="number">
+            <div id="output-numero-5" class="output-numero">
+                <!-- output -->
+            </div>
         </div>
+        <div id="output">
+            <!-- output risultato -->
+        </div>
+
         <div class="cont-interno-sezione">
-            <label for="">Numero 3</label>
-            <input id="num3" type="number">
+            <label for="">N. 2</label>
+            <input id="num2" class="input-numero" type="number">
+            <div id="output-numero-2" class="output-numero">
+                <!-- output -->
+            </div>
         </div>
+
+
     </section>
+
+
     <section class="sezione-3">
+
         <div class="cont-interno-sezione">
-            <label for="">Numero 4</label>
-            <input id="num4" type="number">
+            <label for="">N. 4</label>
+            <input id="num4" class="input-numero" type="number">
+            <div id="output-numero-4" class="output-numero">
+                <!-- output -->
+            </div>
         </div>
+
         <div class="cont-interno-sezione">
-            <label for="">Numero 5</label>
-            <input id="num5" type="number">
+            <label for="">N. 3</label>
+            <input id="num3" class="input-numero" type="number">
+            <div id="output-numero-3" class="output-numero">
+                <!-- output -->
+            </div>
         </div>
         
     </section>
@@ -49,9 +79,7 @@
         </button>
     </div>
 
-    <div id="output">
-        <!-- output risultato -->
-    </div>
+
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>
