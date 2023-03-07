@@ -171,7 +171,11 @@ buttonControllaEl.addEventListener ('click' , function(){
     }
 
     outputEl.style.fontSize = '200px'
-    outputEl.style.color = 'green'
+    if (punteggio != 0) {
+        outputEl.style.color = 'green'
+    } else {
+        outputEl.style.color = 'red'
+    }
     outputEl.innerHTML = punteggio
 
     // fa comparire in pagina tramite un 'div'(output) l'esito = numeri che vengono indovinati e quanti sono 
