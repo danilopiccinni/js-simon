@@ -15,9 +15,18 @@ let numeriusciti = [] ;
 let numeriutente = [] ;
 let punteggio = 0 ;
 let numeriazzeccati = [] ;
+let contatore = 9 ;
+let contoAllaRovescia;
+
 
 // output della pagina
 let outputEl = document.getElementById ('output')
+let outputnum1El = document.getElementById ('output-numero-1')
+let outputnum2El = document.getElementById ('output-numero-2')
+let outputnum3El = document.getElementById ('output-numero-3')
+let outputnum4El = document.getElementById ('output-numero-4')
+let outputnum5El = document.getElementById ('output-numero-5')
+
 
 // input della pagina
 let inputNum1El = document.getElementById ('num1')
@@ -26,39 +35,58 @@ let inputNum3El = document.getElementById ('num3')
 let inputNum4El = document.getElementById ('num4')
 let inputNum5El = document.getElementById ('num5')
 
+// numeri casuali da ricordare
+let num1;
+let num2;
+let num3;
+let num4;
+let num5;
+
+// numeri inseriti dall'utente
+let num1Utente;
+let num2Utente;
+let num3Utente;
+let num4Utente;
+let num5Utente;
+
 // evento click che avvia il giocho facendo comprarire per 10 secondi i numeri da ricordare
 buttonAvviaEl.addEventListener ('click' , function(){
 
+    // timer che fa sparire dopo 10 secondi i 5 numeri random generati al click (funzione , tempo)
+    // setTimeout(stopAlTempo, 10000)
+    // commentata per provare un altra versione
+    outputEl.innerText = '10'
+    
+    contoAllaRovescia = setInterval (count , 1000)
+    
     // crea il primo numero random intero che viene visualizzato in pagina tramite il .value
     inputNum1El.value = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     // assegna il primo numero generato random a una variabile (nel caso serva dopo)
-    let num1 = inputNum1El.value
+    num1 = inputNum1El.value
 
     // crea il secondo numero random intero che viene visualizzato in pagina tramite il .value
     inputNum2El.value = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     // assegna il secondo numero generato random a una variabile (nel caso serva dopo)
-    let num2 = inputNum2El.value
+    num2 = inputNum2El.value
 
     // crea il terzo numero random intero che viene visualizzato in pagina tramite il .value
     inputNum3El.value = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     // assegna il terzo numero generato random a una variabile (nel caso serva dopo)
-    let num3 = inputNum3El.value
+    num3 = inputNum3El.value
 
     // crea il quarto numero random intero che viene visualizzato in pagina tramite il .value
     inputNum4El.value = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     // assegna il quarto numero generato random a una variabile (nel caso serva dopo)
-    let num4 = inputNum4El.value
+    num4 = inputNum4El.value
 
     // crea il quinto numero random intero che viene visualizzato in pagina tramite il .value
     inputNum5El.value = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
     // assegna il quinto numero generato random a una variabile (nel caso serva dopo)
-    let num5 = inputNum5El.value
+    num5 = inputNum5El.value
 
     // aggiunge i 5 numeri creati prima in un array di numeri
     numeriusciti.push(num1,num2,num3,num4,num5)
 
-    // timer che fa sparire dopo 10 secondi i 5 numeri random generati al click (funzione , tempo)
-    setTimeout(stopAlTempo, 10000)
 })
 
 // aggiung un evento click al bottone del controllo
@@ -66,19 +94,19 @@ buttonAvviaEl.addEventListener ('click' , function(){
 buttonControllaEl.addEventListener ('click' , function(){
 
     // prende il primo numero inserito dall'utente tramite il primo input
-    let num1Utente = inputNum1El.value
+    num1Utente = inputNum1El.value
 
     // prende il secondo numero inserito dall'utente tramite il secondo imput
-    let num2Utente = inputNum2El.value
+    num2Utente = inputNum2El.value
 
     // prende il terzo numero inserito dall'utente tramite il terzo imput
-    let num3Utente = inputNum3El.value
+    num3Utente = inputNum3El.value
 
     // prende il quarto numero inserito dall'utente tramite il quarto imput
-    let num4Utente = inputNum4El.value
+    num4Utente = inputNum4El.value
 
     // prende il quinto numero inserito dall'utente tramite il quinto imput
-    let num5Utente = inputNum5El.value
+    num5Utente = inputNum5El.value
     
     // inserisce i 5 numeri dell'utente in una lista (numeri utente)
     numeriutente.push( num1Utente,num2Utente,num3Utente,num4Utente,num5Utente)
@@ -95,9 +123,60 @@ buttonControllaEl.addEventListener ('click' , function(){
         }
     }
     
+    // fa comparire sottto i numeri inseriti dell'utente i numeri che avrebbe dovuto indovinare
+    outputnum1El.innerText = num1
+    if (num1 == num1Utente) {
+        outputnum1El.style.color = 'green'
+        inputNum1El.style.backgroundColor = 'green'
+    } else {
+        inputNum1El.style.backgroundColor = 'red'
+        outputnum1El.style.color = 'red'
+    }
+
+    outputnum2El.innerText = num2
+    if (num2 == num2Utente) {
+        outputnum2El.style.color = 'green'
+        inputNum2El.style.backgroundColor = 'green'
+    } else {
+        inputNum2El.style.backgroundColor = 'red'
+        outputnum2El.style.color = 'red'
+    }
+
+    outputnum3El.innerText = num3
+    if (num3 == num3Utente) {
+        outputnum3El.style.color = 'green'
+        inputNum3El.style.backgroundColor = 'green'
+    } else {
+        inputNum3El.style.backgroundColor = 'red'
+        outputnum3El.style.color ='red'
+    }
+
+    outputnum4El.innerText = num4
+    if (num4 == num4Utente) {
+        outputnum4El.style.color = 'green'
+        inputNum4El.style.backgroundColor = 'green'
+    } else {
+        inputNum4El.style.backgroundColor = 'red'
+        outputnum4El.style.color = 'red'
+    }
+
+    outputnum5El.innerText = num5
+    if (num5 == num5Utente) {
+        outputnum5El.style.color = 'green'
+        inputNum5El.style.backgroundColor = 'green'
+    } else {
+        inputNum5El.style.backgroundColor = 'red'
+        outputnum5El.style.color = 'red'
+
+    }
+
+    outputEl.style.fontSize = '200px'
+    outputEl.style.color = 'green'
+    outputEl.innerHTML = punteggio
+
     // fa comparire in pagina tramite un 'div'(output) l'esito = numeri che vengono indovinati e quanti sono 
-    outputEl.innerText = 'i numeri che hai indovinato sono ' + numeriazzeccati + ' quindi ' + punteggio + ' su 5'
-    
+    // outputEl.innerText = 'i numeri che hai indovinato sono ' + numeriazzeccati + ' quindi ' + punteggio + ' su 5'
+    // commentato per provare una versione diversa dell'esercizio
 })
 
 // function azzera i valori visualizzati per 10 secondi
@@ -107,4 +186,24 @@ function stopAlTempo() {
     inputNum3El.value = ''
     inputNum4El.value = ''
     inputNum5El.value = ''
+    outputEl.innerText = ''
+}
+
+function count() {
+    
+    outputEl.innerText = contatore
+    
+    if (contatore <= 0) {
+        
+        inputNum1El.value = ''
+        inputNum2El.value = ''
+        inputNum3El.value = ''
+        inputNum4El.value = ''
+        inputNum5El.value = ''
+        outputEl.innerText = ''
+        clearInterval(contoAllaRovescia)
+    }
+
+    contatore-- ;
+
 }
