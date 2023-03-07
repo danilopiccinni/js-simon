@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.cont-bottone-avvia {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 80px;
+}
+
+.sezione-1 {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 100px;
+}
+
+.cont-interno-sezione {
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-interno-sezione label {
+    text-align: center;
+}
+
+
+
+.sezione-2 {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+
+    padding-top: 80px;
+}
+
+.sezione-3 {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+
+    padding-top: 100px;
+}
+
+.cont-bottone-controlla {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 100px;
+}
+
